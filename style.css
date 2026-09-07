@@ -1,0 +1,95 @@
+/*kommentaar*/
+h1{
+    font-variant: small-caps;
+    font-size: xx-large;
+    color: crimson; /*teksti värv*/
+    background-color: transparent; /*tausta värv*/
+}
+header{
+    padding: 5%;
+    background-color: honeydew;
+    border-left: 3px solid crimson;
+    border-bottom: 3px dotted crimson;
+    border-radius: 0 0 0 60px;
+    background-image: url("hommik.png");
+    background-repeat: no-repeat;
+    background-position: left;
+
+}
+footer{
+    padding: 5%;
+    background-color: honeydew;
+    border-left: 3px solid crimson;
+    border-top: 3px dotted crimson;
+    border-radius: 60px 0 0 0;
+}
+section#osa1{
+    padding: 5%;
+    border: 1px solid crimson; /*dotted, dashed, double, outline, groove*/
+    margin: 5px;
+    width: 25%;
+
+}
+section#osa2{
+    padding: 5%;
+    border: 1px solid royalblue;
+    margin: 5px;
+    width: 15%;
+}
+section#osa3{
+    padding: 5%;
+    border: 4px dashed crimson;
+    margin: 5px;
+    width: 33%;
+
+}
+section#osa4{
+    padding: 5%;
+    border: 6px dotted crimson;
+    margin: 5px;
+    width: 30%;
+
+}
+section#osa5{
+    padding: 5%;
+    border: 5px outset crimson;
+    margin: 5px;
+    width: 30%;
+
+}
+img{
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid crimson;
+}
+/*navigeerimis menüü*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: crimson;
+}
+ul li{
+    float: left;
+}
+nav ul li a{
+    display: block;
+    color: lightslategrey;
+    text-decoration: none; /*link on alljoonita*/
+    text-align: center; /*tektsi joondamine keskel*/
+    padding: 10px;
+    border-left: 3px solid crimson;
+    border-right: 3px solid crimson;
+    border-radius: 20%;
+}
+nav{
+    padding: 5%;
+    margin-bottom: 20px;
+}
+nav ul li a:hover{
+    background-color: crimson;
+}
+
+
+
+

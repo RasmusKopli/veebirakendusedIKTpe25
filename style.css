@@ -57,7 +57,7 @@ section#osa5{
     width: 30%;
 
 }
-img{
+img#erapilt{
     width: 100%;
     border-radius: 50%;
     border: 5px solid crimson;
@@ -88,6 +88,12 @@ nav{
 }
 nav ul li a:hover{
     background-color: crimson;
+}
+
+#suurkast{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 

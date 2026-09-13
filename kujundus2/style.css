@@ -1,336 +1,283 @@
-/* =========================================================
-   COMPACT NAVIGATION
-   ========================================================= */
+/* ==========================================================
+   Hommik — kujundus päeva kaare järgi
+   Iga osa (osa1–osa5) tähistab erinevat kellaaega: koit, hommik,
+   keskpäev, õhtu, öö. Struktuur (selektorid) on originaalist,
+   stiil on täielikult uuendatud.
+   ========================================================== */
 
-nav {
-    position: fixed;
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
 
-    top: 20px;
-    left: 20px;
+:root {
+    --paper: #fbf4ea;
+    --ink: #211d1a;
+    --ink-soft: #6b6157;
 
-    width: 155px;
-    height: auto;
+    --dawn: #d97c6b;
+    --morning: #3e6e8e;
+    --midday: #c9932e;
+    --dusk: #b8562a;
+    --night: #2c3550;
 
-    padding: 12px;
-
-    background: rgba(13, 22, 40, 0.94);
-
-    border: 1px solid rgba(148, 163, 184, 0.14);
-    border-radius: 14px;
-
-    z-index: 1000;
-
-    box-shadow:
-            0 10px 30px rgba(0, 0, 0, 0.22);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    --rule: rgba(33, 29, 26, 0.12);
+    --space: clamp(1.25rem, 3vw, 2.5rem);
 }
 
+* {
+    box-sizing: border-box;
+}
 
-/* =========================================================
-   NAVIGATION LIST
-   ========================================================= */
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "nav header"
+        "main main"
+        "footer footer";
+}
+
+h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-variant: normal;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    background: transparent;
+    margin: 0;
+}
+
+/* ---------- nav: päise kõrval vasakul, grid-area järgi ---------- */
+nav {
+    grid-area: nav;
+    align-self: start;
+    margin: 1rem;
+    padding: 0;
+}
 
 nav ul {
+    list-style: none;
     display: flex;
-
     flex-direction: column;
-
-    gap: 3px;
-
+    gap: 0;
     margin: 0;
-    padding: 0;
-
-    list-style: none;
+    padding: 0.5rem 0;
+    background: var(--ink);
+    border: 1px solid rgba(242, 236, 225, 0.35);
+    border-radius: 4px;
 }
-
-nav ul li {
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-
-/* =========================================================
-   NAVIGATION LINKS
-   ========================================================= */
 
 nav ul li a {
-    position: relative;
-
     display: block;
-
-    width: 100%;
-
-    padding: 8px 10px;
-
-    color: #9eabc0;
-
+    color: #f2ece1;
     text-decoration: none;
-
-    text-align: left;
-
-    font-family: "Inter", sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-
-    border-radius: 8px;
-
-    transition:
-            color 0.2s ease,
-            background 0.2s ease,
-            transform 0.2s ease;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: none;
+    border-radius: 0;
+    transition: color 0.2s ease;
 }
-
-
-/* Hover */
 
 nav ul li a:hover,
 nav ul li a:focus-visible {
-    color: #f3f6fa;
-
-    background: rgba(56, 189, 248, 0.08);
-
-    transform: translateX(2px);
+    color: var(--dawn);
 }
 
-
-/* Small blue indicator */
-
-nav ul li a::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 50%;
-
-    width: 2px;
-    height: 0;
-
-    background: #38bdf8;
-
-    border-radius: 0 3px 3px 0;
-
-    transform: translateY(-50%);
-
-    transition: height 0.2s ease;
-}
-
-nav ul li a:hover::before,
-nav ul li a:focus-visible::before {
-    height: 15px;
-}
-
-
-/* Disable old decorative arrow */
-
-nav ul li a::after {
-    display: none;
-}
-
-
-/* =========================================================
-   CONTENT POSITION
-   ========================================================= */
-
-/*
-   The navigation is 155px wide and starts 20px
-   from the left.
-
-   Content therefore starts at 195px.
-*/
-
-header,
-#suurkast,
-footer {
-    width: min(
-            calc(100% - 215px),
-            var(--max-width)
-    );
-
-    margin-left: 195px;
-}
-
-
-/* Header */
-
+/* ---------- header: koidik ---------- */
 header {
-    margin-top: 18px;
+    grid-area: header;
+    position: relative;
+    padding: var(--space);
+    padding-top: calc(var(--space) + 6px);
+    background-color: var(--paper);
+    background-image: url("hommik.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    border: none;
+    border-radius: 0;
 }
 
-
-/* Main content */
-
-#suurkast {
-    margin-top: 14px;
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+            90deg,
+            var(--night),
+            var(--dusk),
+            var(--midday),
+            var(--dawn),
+            var(--morning)
+    );
 }
 
-
-/* Footer */
-
+/* ---------- footer: öö ---------- */
 footer {
-    margin-top: 14px;
-    margin-bottom: 18px;
+    grid-area: footer;
+    padding: var(--space);
+    background-color: var(--night);
+    color: #d9dce6;
+    border: none;
+    border-radius: 0;
 }
 
+footer a {
+    color: #f2ece1;
+}
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ---------- sisu: päeva kaar ---------- */
+main {
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--space);
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-@media (max-width: 850px) {
+section {
+    padding: 1.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-top: 3px solid var(--rule);
+    margin: 0;
+    flex: 1 1 200px;
+}
 
-    nav {
-        width: 140px;
+section h2,
+section h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-top: 0;
+}
 
-        top: 15px;
-        left: 15px;
+/* iga osa kannab oma kellaaja tooni ainult ülemises servas ja pealkirjas */
+section#osa1 {
+    border-top-color: var(--dawn);
+    flex-basis: 22%;
+}
+section#osa1 h2, section#osa1 h3 { color: var(--dawn); }
 
-        padding: 10px;
+section#osa2 {
+    border-top-color: var(--morning);
+    flex-basis: 16%;
+}
+section#osa2 h2, section#osa2 h3 { color: var(--morning); }
+
+section#osa3 {
+    border-top-color: var(--midday);
+    flex-basis: 28%;
+}
+section#osa3 h2, section#osa3 h3 { color: var(--midday); }
+
+section#osa4 {
+    border-top-color: var(--dusk);
+    flex-basis: 26%;
+}
+section#osa4 h2, section#osa4 h3 { color: var(--dusk); }
+
+section#osa4 a {
+    color: var(--dusk);
+    text-decoration-color: rgba(184, 86, 42, 0.4);
+}
+
+section#osa4 a:hover {
+    text-decoration-color: var(--dusk);
+}
+
+section#osa4 div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* osa ilma id-ta (nt terminalikäsud) - terminali välimus */
+main > section:not([id]) {
+    background: var(--ink);
+    color: #f2ece1;
+    border-top: 3px solid var(--midday);
+    border-radius: 8px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin: 0 0 0 1rem;
+}
+
+main > section:not([id]) h2 {
+    font-family: "Fraunces", serif;
+    color: var(--midday);
+}
+
+main > section:not([id]) strong {
+    color: var(--dawn);
+    font-weight: 600;
+}
+
+section#osa5 {
+    border-top-color: var(--night);
+    flex-basis: 100%;
+}
+section#osa5 h2, section#osa5 h3 { color: var(--night); }
+
+/* ---------- profiilipilt ---------- */
+img#erapilt {
+    width: 160px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: none;
+    padding: 4px;
+    background: conic-gradient(
+            var(--night),
+            var(--dusk),
+            var(--midday),
+            var(--dawn),
+            var(--morning),
+            var(--night)
+    );
+}
+
+/* ---------- responsiivsus ---------- */
+@media (max-width: 720px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "header"
+            "main"
+            "footer";
     }
 
-    nav ul li a {
-        padding: 8px;
-
-        font-size: 0.74rem;
-    }
-
-    header,
-    #suurkast,
-    footer {
-        width: calc(100% - 185px);
-
-        margin-left: 170px;
+    section#osa1,
+    section#osa2,
+    section#osa3,
+    section#osa4,
+    section#osa5 {
+        flex-basis: 100%;
     }
 
     header {
-        margin-top: 15px;
+        background-position: center top;
+        background-size: 60%;
+        padding-top: calc(var(--space) + 40vw);
     }
 }
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    /*
-       On phones the sidebar becomes a small
-       horizontal navigation.
-    */
-
-    nav {
-        position: relative;
-
-        top: auto;
-        left: auto;
-
-        width: calc(100% - 20px);
-
-        margin: 10px auto 0;
-        padding: 5px;
-
-        background: rgba(13, 22, 40, 0.95);
-
-        border-radius: 11px;
-
-        overflow: hidden;
-    }
-
-
-    nav ul {
-        flex-direction: row;
-
-        gap: 3px;
-
-        width: 100%;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-    }
-
-    nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    nav ul li {
-        flex: 0 0 auto;
-
-        width: auto;
-    }
-
-
-    nav ul li a {
-        width: auto;
-
-        padding: 7px 9px;
-
-        text-align: center;
-
-        font-size: 0.7rem;
-
-        white-space: nowrap;
-    }
-
-
-    nav ul li a:hover,
-    nav ul li a:focus-visible {
-        transform: none;
-    }
-
-
-    nav ul li a::before {
-        display: none;
-    }
-
-
-    /* Reset desktop content positioning */
-
-    header,
-    #suurkast,
-    footer {
-        width: calc(100% - 20px);
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    header {
-        margin-top: 10px;
-    }
-
-
-    #suurkast {
-        margin-top: 10px;
-    }
-
-
-    footer {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+    nav ul li a {
+        transition: none;
     }
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Muusika küsitlus</title>
+    <script src="../js/piltScript.js"></script>
+</head>
+<body>
+<h1>Muusika</h1>
+<h2 id="ul1">Milliseid muusikuid sa tead?</h2>
+<input type="checkbox" name="valik1" id="v1" value="v1" onclick="ansambliValik()">
+<label for="v1">muusik1</label>
+<br>
+<input type="checkbox" name="valik2" id="v2" value="v2" onclick="ansambliValik()">
+<label for="v2">muusik3</label>
+<br>
+<input type="checkbox" name="valik3" id="v3" value="v3" onclick="ansambliValik()">
+<label for="v3">muusik2</label>
+
+<br>
+<br>
+<div id="vastus">Siia tuleb vastus...</div>
+
+<br>
+
+<h2 id="ul2">Mida sina arvad muusika kuulamisest koolis?</h2>
+<label for="arvamus">Sisesta oma arvamus: </label>
+<br>
+<input type="text" id="arvamus" oninput="arvamusMuusika()">
+<br>
+<br>
+<div id="vastus2">Siia tuleb sinu arvamus...</div>
+
+<br>
+
+<h2 id="ul3">Mitu tundi päevas sa kuulad muusikat?</h2>
+<input type="range" name="Kui kaua (tundides)" id="muusikaPikkus" min="1" max="10" value="0" oninput="KuiKauaTundides()">
+<label for="muusikaPikkus">Kui kaua (1-10 tundi)</label>
+<div id="vastus3">Siia tuleb vastus...</div>
+
+<br>
+
+<h2 id="ul4">Kas sa kuulad raadiot?</h2>
+<input type="radio" name="valik4" id="ei" value="ei" onclick="JahVoiEi()">
+<label for="ei">Ei</label>
+<br>
+<input type="radio" name="valik4" id="jah" value="jah" onclick="JahVoiEi()">
+<label for="jah">Jah</label>
+<div id="vastus4">Siia tuleb vastus...</div>
+
+<br>
+
+<h2 id="ul5">Milliseid raadiojaamu oskad nimetada?</h2>
+<Input type="text" id="raadiojaamad" value="raadiojaamad" oninput="RaadioJaamad()">
+<label for="raadiojaamad"></label>
+<div id="vastus5"></div>
+
+<br>
+
+<h2>Millist muusikat sa kõige rohkem kuulad?</h2>
+
+
+
+</body>
+</html>

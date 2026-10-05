@@ -1,0 +1,46 @@
+body{
+    font-family: georgia serif;
+    background-color: lightsteelblue;
+}
+img{
+    width:200px;
+    border: 2pt solid crimson;
+    border-radius: 50%;
+}
+input[type=radio]{
+    accent-color: blue;
+}
+input[type=button]{
+    width: 10%;
+    border: 2pt solid darkred;
+    padding: 1%;
+    background-color: crimson;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+}
+div#vastus{
+    width: 100px;
+    border: 2pt solid darkred;
+    padding: 1%;
+    background-color: crimson;
+    border-radius: 10px;
+    position: absolute;
+    left: 200px;
+    top: 370px;
+}
+label{
+    font-weight: bold;
+    padding: 2px;
+    margin-right: 10px;
+}
+label:hover{
+    background-color: crimson;
+    border: 2pt solid darkred;
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}

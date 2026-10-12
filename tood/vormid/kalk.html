@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>Saia kalkulaator</title>
   <script src="../js/saiakalkScript.js"></script>
+  <script src="../js/tempKalk.js"></script>
   <link rel="stylesheet" href="kalkStyle.css">
 </head>
 <body>
 <h1>Kalkulaatorid</h1>
+<section id="yld">
 <section id="osa1">
   <h2>Saia Kalkulaator</h2>
   <label for="kogus">Kogus:</label>
@@ -24,6 +26,22 @@
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDq_gC8V5DJDY2FvEk3Mg97fP8RUMbFzXX6faK_zNpBA&s=10" alt="" id="pilt">
 
   <div id="vastus"></div>
+</section>
+<section id="osa2">
+  <h2>Temperatuuri kalkulaator</h2>
+  <label for="temp">Sisesta temperatuur</label>
+  <input type="number" id="temp" min="-50" max="50" step="1" value="0">
+  <br>
+
+  <input type="radio" name="tempValik" id="celsius" value="celsius" onchange="tempTeisendus()">
+  <label for="celsius">&deg;C - Celcius</label>
+  <br>
+  <input type="radio" name="tempValik" id="fahrenheit" value="fahrenheit" onchange="tempTeisendus()">
+  <label for="fahrenheit">&deg;F - Fahrenheit</label>
+  <br>
+  <div id="vastus2"></div>
+  <img src="https://www.sensorsone.com/wp-content/uploads/2013/11/0-350F-to-C-Conversion-Scale.png" alt="celsius ja fahrenheit pilt">
+</section>
 </section>
 </body>
 </html>

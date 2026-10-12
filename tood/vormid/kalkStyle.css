@@ -7,13 +7,19 @@ section#osa1{
     border: 1pt solid black;
     border-radius: 10pt;
     padding: 10pt;
-    width: 30%;
+    width: 20%;
 }
 section#osa2{
     border: 1pt solid black;
     border-radius: 10pt;
     padding: 10pt;
-    width: 40%;
+    width: 20%;
+}
+section#osa3{
+    border: 1pt solid black;
+    border-radius: 10pt;
+    padding: 10pt;
+    width: 20%;
 }
 img#pilt{
     border-radius: 50%;

@@ -5,43 +5,79 @@
   <title>Saia kalkulaator</title>
   <script src="../js/saiakalkScript.js"></script>
   <script src="../js/tempKalk.js"></script>
+  <script src="../js/valuutaScript.js"></script>
+  <script src="../js/kauguskonverterkalkScript.js"></script>
   <link rel="stylesheet" href="kalkStyle.css">
 </head>
 <body>
 <h1>Kalkulaatorid</h1>
 <section id="yld">
-<section id="osa1">
-  <h2>Saia Kalkulaator</h2>
-  <label for="kogus">Kogus:</label>
-  <input type="number" id="kogus" min="1" max="10" step="1" onchange="saiaKalk()">
-  <br>
-  <label for="saiatyyp">Palun vali saia tüüp</label>
-  <select name="saiatyyp" id="saiatyyp" onchange="saiaKalk()">
-    <option value="vali">vali..</option>
-    <option value="mooni">moonisai</option>
-    <option value="juustu">juustusai</option>
-    <option value="pontsik">pontsik</option>
-    <option value="kaneeli">kaneelisai</option>
-  </select>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDq_gC8V5DJDY2FvEk3Mg97fP8RUMbFzXX6faK_zNpBA&s=10" alt="" id="pilt">
+  <section id="osa1">
+    <h2>Saia Kalkulaator</h2>
+    <label for="kogus">Kogus:</label>
+    <input type="number" id="kogus" min="1" max="10" step="1" onchange="saiaKalk()">
+    <br>
+    <label for="saiatyyp">Palun vali saia tüüp</label>
+    <select name="saiatyyp" id="saiatyyp" onchange="saiaKalk()">
+      <option value="vali">vali..</option>
+      <option value="mooni">moonisai</option>
+      <option value="juustu">juustusai</option>
+      <option value="pontsik">pontsik</option>
+      <option value="kaneeli">kaneelisai</option>
+    </select>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDq_gC8V5DJDY2FvEk3Mg97fP8RUMbFzXX6faK_zNpBA&s=10" alt="" id="pilt">
 
-  <div id="vastus"></div>
-</section>
-<section id="osa2">
-  <h2>Temperatuuri kalkulaator</h2>
-  <label for="temp">Sisesta temperatuur</label>
-  <input type="number" id="temp" min="-50" max="50" step="1" value="0">
-  <br>
+    <div id="vastus"></div>
+  </section>
 
-  <input type="radio" name="tempValik" id="celsius" value="celsius" onchange="tempTeisendus()">
-  <label for="celsius">&deg;C - Celcius</label>
-  <br>
-  <input type="radio" name="tempValik" id="fahrenheit" value="fahrenheit" onchange="tempTeisendus()">
-  <label for="fahrenheit">&deg;F - Fahrenheit</label>
-  <br>
-  <div id="vastus2"></div>
-  <img src="https://www.sensorsone.com/wp-content/uploads/2013/11/0-350F-to-C-Conversion-Scale.png" alt="celsius ja fahrenheit pilt">
-</section>
+  <section id="osa2">
+    <h2>Temperatuuri kalkulaator</h2>
+    <label for="temp">Sisesta temperatuur</label>
+    <input type="number" id="temp" min="-50" max="50" step="1" value="0">
+    <br>
+
+    <input type="radio" name="tempValik" id="celsius" value="celsius" onchange="tempTeisendus()">
+    <label for="celsius">&deg;C - Celcius</label>
+    <br>
+    <input type="radio" name="tempValik" id="fahrenheit" value="fahrenheit" onchange="tempTeisendus()">
+    <label for="fahrenheit">&deg;F - Fahrenheit</label>
+    <br>
+    <div id="vastus2"></div>
+    <img src="https://www.sensorsone.com/wp-content/uploads/2013/11/0-350F-to-C-Conversion-Scale.png" alt="celsius ja fahrenheit pilt">
+  </section>
+
+  <section id="osa3">
+    <h2>Valuuta kalkulaator</h2>
+    <label for="valuuta"> Kirjuta kuhu teisendame... </label>
+    (dollar, pound, yen, ruble)
+    <input type="text" id="valuuta" name="valuuta" onchange="valuutaKalk()">
+    <br>
+    <label for="euro">Sisesta summa eurodes</label>
+    <input type="number" id="euro" min="1" max="10" step="1" value="0">
+
+    <div id="vastus3"></div>
+  </section>
+
+  <section id="osa4">
+    <!-- imperiaal süsteemi metric süsteemi kalkulaator ja teistpidi -->
+    <h2>Imperiaalist <> meetrilisse</h2>
+    <label for="length">Sisesta pikkus</label>
+    <input type="number" id="length" min="1" max="30" step="1" value="0">
+    <br>
+    <input type="radio" name="kaugusKonvert" id="inch" value="inch" onchange="kaugusTeisendus()">
+    <label for="inch">Inch (in) => Sentimeetritesse (cm)</label>
+    <br>
+    <input type="radio" name="kaugusKonvert" id="foot" value="foot" onchange="kaugusTeisendus()">
+    <label for="foot">Foot (ft) => Meetritesse (m)</label>
+    <br>
+    <input type="radio" name="kaugusKonvert" id="mile" value="mile" onchange="kaugusTeisendus()">
+    <label for="mile">Mile (mi) => Kilomeetritesse (km)</label>
+
+    <div id="vastus4"></div>
+
+
+  </section>
+
 </section>
 </body>
 </html>

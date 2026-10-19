@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Rasmus veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
+    <script src="tood/js/kuupaevaFunktsioonid.js"></script>
 </head>
 <body>
 <!--veebilehe sisu, mis kasutaja näeb-->
@@ -50,6 +51,14 @@
         <div>Ise tehtud pilt
             <img src="hommik.png" alt="see on päikesetõus" id="erapilt">
         </div>
+    </section>
+
+    <section id="osa3">
+        <input type="button" value="Täna on" onclick="TanaOn()">
+        <div id="vastus"></div>
+        <br>
+        <input type="button" value="Sünnipäev" onclick="MinuSunnipaev()">
+        <div id="vastus2"></div>
     </section>
 
 </main>

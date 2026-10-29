@@ -109,7 +109,7 @@ autod.splice(1,0,{ mark: 'Audi', mudel: 'A4', aasta: 2018 });
 
 console.log(autod); */
 
-let autod = [
+/*let autod = [
     { mark: 'Toyota', mudel: 'Corolla', aasta: 2007 },
     { mark: 'Honda', mudel: 'Civic', aasta: 2012 },
     { mark: 'Tesla', mudel: 'Model 3', aasta: 2019 }
@@ -118,3 +118,74 @@ let autod = [
 //Otsimine
 let otsing = autod.find(auto=>auto.aasta > 2018);
 console.log(otsing);
+*/
+
+/*let autod = [
+//Toyota oli ära muudetud, et oleks nähtav tulemus.
+    { mark: 'Toyota', mudel: 'Corolla', aasta: 2015 },
+    { mark: 'Honda', mudel: 'Civic', aasta: 2012 },
+    { mark: 'Tesla', mudel: 'Model 3', aasta: 2019 }
+];
+
+autod.sort((a, b) => a.aasta - b.aasta);
+console.log(autod); */
+
+
+//Ülesanne
+let raamat = {
+
+    pealkiri: "Pride and Prejudice", autor: "Jane Austen", aasta: "1978",
+
+    raamatuKirjeldus: function(){
+        return this.pealkiri + ", " + this.autor;
+    },
+
+    raamatuAasta: function() {
+        return this.aasta;
+    }
+};
+
+console.log(raamat.raamatuKirjeldus());
+console.log(raamat.raamatuAasta());
+
+const raamatukogu = {
+    raamatud: [
+        { pealkiri: "Animal Farm", autor: "George Orwell", aasta: 1945 },
+        { pealkiri: "Wuthering Heights", autor: "Emily Bronte", aasta: 1927 },
+        { pealkiri: "Life of Pi", autor: "Yann Martel", aasta: 2001 }
+    ],
+
+    kuvaKoguarv() {
+        console.log(`kokku: ${this.raamatud.length} raamatut.`);
+    },
+
+    raamatudParast2000() {
+        const uuedRaamatud = this.raamatud.filter(raamat => Number(raamat.aasta) > 2000);
+        console.log(`Pärast 2000. aastat on ilmunud ` + uuedRaamatud.length + ` raamat.`);
+    },
+
+    //kuvab raamatute vanuse lahutates aastaga 2026 raamatu ilmumisaastaga.
+    raamatuVanus() {
+        this.raamatud.forEach(raamat => {
+            const vanus = 2026 - Number(raamat.aasta);
+            console.log(`Raamat ` + raamat.pealkiri + ` on ` + vanus + ` aastat vana`);
+        });
+    }
+
+};
+
+
+raamatukogu.raamatud.splice(1,0,{pealkiri: "1984", autor: "George Orwell", aasta: 1984})
+
+console.log(raamatukogu.raamatud);
+
+raamatukogu.kuvaKoguarv();
+
+raamatukogu.raamatudParast2000();
+
+raamatukogu.raamatuVanus();
+
+let tulemus = "";
+let vastus1=document.getElementById("vastus1");
+
+

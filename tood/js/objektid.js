@@ -145,6 +145,9 @@ let raamat = {
     }
 };
 
+document.getElementById("vastus1").textContent = raamat.raamatuKirjeldus();
+document.getElementById("vastus2").textContent = raamat.raamatuAasta();
+
 console.log(raamat.raamatuKirjeldus());
 console.log(raamat.raamatuAasta());
 
@@ -152,27 +155,36 @@ const raamatukogu = {
     raamatud: [
         { pealkiri: "Animal Farm", autor: "George Orwell", aasta: 1945 },
         { pealkiri: "Wuthering Heights", autor: "Emily Bronte", aasta: 1927 },
-        { pealkiri: "Life of Pi", autor: "Yann Martel", aasta: 2001 }
+        { pealkiri: "Life of Pi", autor: "Yann Martel", aasta: 2001 },
     ],
 
     kuvaKoguarv() {
         console.log(`kokku: ${this.raamatud.length} raamatut.`);
+        document.getElementById("vastus4").textContent = `Kokku: ${this.raamatud.length} raamatut.`;
     },
 
     raamatudParast2000() {
         const uuedRaamatud = this.raamatud.filter(raamat => Number(raamat.aasta) > 2000);
         console.log(`Pärast 2000. aastat on ilmunud ` + uuedRaamatud.length + ` raamat.`);
+        document.getElementById("vastus5").textContent = `Kokku: `+ uuedRaamatud.length +` ilmunud raamat pärast aastat 2000`;
     },
 
-    //kuvab raamatute vanuse lahutates aastaga 2026 raamatu ilmumisaastaga.
+    //kuvab raamatute vanuse lahutates aastaga 2026 raamatu ilmumisaastaga (2026 - Ilmumisaasta = vanus).
     raamatuVanus() {
+
+        const Raamatvanused =document.getElementById("vastus6")
+        Raamatvanused.innerHTML = "";
         this.raamatud.forEach(raamat => {
             const vanus = 2026 - Number(raamat.aasta);
             console.log(`Raamat ` + raamat.pealkiri + ` on ` + vanus + ` aastat vana`);
-        });
-    }
 
+            const rida = document.createElement("div");
+            rida.textContent = `Raamat, ` + raamat.pealkiri + ` on ` + vanus + ` aastat vana`;
+            Raamatvanused.appendChild(rida);
+        });
+    },
 };
+
 
 
 raamatukogu.raamatud.splice(1,0,{pealkiri: "1984", autor: "George Orwell", aasta: 1984})
@@ -184,8 +196,5 @@ raamatukogu.kuvaKoguarv();
 raamatukogu.raamatudParast2000();
 
 raamatukogu.raamatuVanus();
-
-let tulemus = "";
-let vastus1=document.getElementById("vastus1");
 
 

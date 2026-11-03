@@ -185,7 +185,21 @@ const raamatukogu = {
     },
 };
 
+let tulemus = "";
 
+raamatukogu.raamatud.forEach((raamat) => {
+    tulemus += `
+    <p>
+        <b>Pealkiri:</b> ${raamat.pealkiri}<br>
+        <b>Autor:</b> ${raamat.autor}<br>
+        <b>Aasta:</b> ${raamat.aasta}<br>
+    </p>
+    <hr>
+   `;
+});
+
+let vastus3=document.getElementById("vastus3")
+vastus3.innerHTML = tulemus;
 
 raamatukogu.raamatud.splice(1,0,{pealkiri: "1984", autor: "George Orwell", aasta: 1984})
 

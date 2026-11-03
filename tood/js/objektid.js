@@ -164,7 +164,7 @@ const raamatukogu = {
     },
 
     raamatudParast2000() {
-        const uuedRaamatud = this.raamatud.filter(raamat => Number(raamat.aasta) > 2000);
+        const uuedRaamatud = this.raamatud.filter(raamat => raamat.aasta > 2000);
         console.log(`Pärast 2000. aastat on ilmunud ` + uuedRaamatud.length + ` raamat.`);
         document.getElementById("vastus5").textContent = `Kokku: `+ uuedRaamatud.length +` ilmunud raamat pärast aastat 2000`;
     },

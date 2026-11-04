@@ -3,63 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Muusika küsitlus</title>
-    <script src="../js/piltScript.js"></script>
+    <script src="../js/muusikaScript.js"></script>
+    <link rel="stylesheet" href="muusikaStyle.css">
 </head>
 <body>
 <h1>Muusika</h1>
-<h2 id="ul1">Milliseid muusikuid sa tead?</h2>
-<input type="checkbox" name="valik1" id="v1" value="v1" onclick="ansambliValik()">
-<label for="v1">muusik1</label>
-<br>
-<input type="checkbox" name="valik2" id="v2" value="v2" onclick="ansambliValik()">
-<label for="v2">muusik3</label>
-<br>
-<input type="checkbox" name="valik3" id="v3" value="v3" onclick="ansambliValik()">
-<label for="v3">muusik2</label>
+<section id="kusimustik">
+    <h2 id="ul1">Milliseid muusikuid/ansambleid sa tead?</h2>
+    <input type="checkbox" name="muusikud" id="Eminem" value="Eminem" onclick="ansambliValik()">
+    <label for="Eminem">Eminem</label>
+    <br>
+    <input type="checkbox" name="muusikud" id="Nublu" value="Nublu" onclick="ansambliValik()">
+    <label for="Nublu">Nublu</label>
+    <br>
+    <input type="checkbox" name="muusikud" id="GunsAndRoses" value="Guns & Roses" onclick="ansambliValik()">
+    <label for="GunsAndRoses">Guns & Roses</label>
 
-<br>
-<br>
-<div id="vastus">Siia tuleb vastus...</div>
+    <br>
+    <div id="vastus"></div>
+    <br>
 
-<br>
+    <h2 id="ul2">Mida sina arvad muusika kuulamisest koolis?</h2>
+    <label for="arvamus">Sisesta oma arvamus: </label>
+    <input type="text" id="arvamus" oninput="arvamusMuusika()">
+    <br>
+    <div id="vastus2"></div>
 
-<h2 id="ul2">Mida sina arvad muusika kuulamisest koolis?</h2>
-<label for="arvamus">Sisesta oma arvamus: </label>
-<br>
-<input type="text" id="arvamus" oninput="arvamusMuusika()">
-<br>
-<br>
-<div id="vastus2">Siia tuleb sinu arvamus...</div>
+    <br>
 
-<br>
+    <h2 id="ul3">Mitu tundi päevas sa kuulad muusikat?</h2>
+    <input type="range" name="Kui kaua (tundides)" id="muusikaPikkus" min="1" max="10" value="0" oninput="KuiKauaTundides()">
+    <label for="muusikaPikkus">Kui kaua (1-10 tundi)</label>
+    <div id="vastus3"></div>
 
-<h2 id="ul3">Mitu tundi päevas sa kuulad muusikat?</h2>
-<input type="range" name="Kui kaua (tundides)" id="muusikaPikkus" min="1" max="10" value="0" oninput="KuiKauaTundides()">
-<label for="muusikaPikkus">Kui kaua (1-10 tundi)</label>
-<div id="vastus3">Siia tuleb vastus...</div>
+    <br>
 
-<br>
+    <h2 id="ul4">Kas sa kuulad raadiot?</h2>
+    <input type="radio" name="valik4" id="jahVastus" value="Jah" onclick="JahVoiEi()">
+    <label for="jahVastus">Jah</label>
+    <br>
+    <input type="radio" name="valik4" id="eiVastus" value="Ei" onclick="JahVoiEi()">
+    <label for="eiVastus">Ei</label>
+    <br>
+    <div id="vastus4"></div>
 
-<h2 id="ul4">Kas sa kuulad raadiot?</h2>
-<input type="radio" name="valik4" id="ei" value="ei" onclick="JahVoiEi()">
-<label for="ei">Ei</label>
-<br>
-<input type="radio" name="valik4" id="jah" value="jah" onclick="JahVoiEi()">
-<label for="jah">Jah</label>
-<div id="vastus4">Siia tuleb vastus...</div>
+    <br>
 
-<br>
+    <h2 id="ul5">Milliseid raadiojaamu oskad nimetada?</h2>
+    <Input type="text" id="raadiojaamad" oninput="RaadioJaamad()">
+    <label for="raadiojaamad"></label>
+    <div id="vastus5"></div>
 
-<h2 id="ul5">Milliseid raadiojaamu oskad nimetada?</h2>
-<Input type="text" id="raadiojaamad" value="raadiojaamad" oninput="RaadioJaamad()">
-<label for="raadiojaamad"></label>
-<div id="vastus5"></div>
+    <br>
 
-<br>
+    <h2 id="ul6">Millist muusikat sa kõige rohkem kuulad?</h2>
+    <input type="radio" name="musicType" id="HipHop" value="Hip-Hop" onclick="MuusikaType()">
+    <label for="HipHop">Hip-Hop</label>
+    <br>
+    <input type="radio" name="musicType" id="Klassika" value="Klassika" onclick="MuusikaType()">
+    <label for="Klassika">Klassika</label>
+    <br>
+    <input type="radio" name="musicType" id="Rock" value="Rock" onclick="MuusikaType()">
+    <label for="Rock">Rock</label>
+    <br>
+    <input type="radio" name="musicType" id="Pop" value="Pop" onclick="MuusikaType()">
+    <label for="Pop">Pop</label>
+    <br>
+    <input type="radio" name="musicType" id="Jazz" value="Jazz" onclick="MuusikaType()">
+    <label for="Jazz">Jazz</label>
+    <br>
+    <input type="radio" name="musicType" id="Folk" value="Folk" onclick="MuusikaType()">
+    <label for="Folk">Folk</label>
 
-<h2>Millist muusikat sa kõige rohkem kuulad?</h2>
+    <div id="vastus6"></div>
 
+    <br>
+    <br>
 
+    <input type="button" id="kokkuvote" value="Kokkuvõte" onclick="muusikaKokkuvote()">
+    <div id="vastus7"></div>
 
+    <input type="button" id="clearMusic" value="Clear" onClick="muusikaClear()">
+</section>
 </body>
 </html>

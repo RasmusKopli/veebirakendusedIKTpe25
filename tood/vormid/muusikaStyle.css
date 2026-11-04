@@ -1,0 +1,57 @@
+input[type=button] {
+    padding: 3px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15%;
+}
+
+body {
+    background-color: #d9dce6;
+}
+
+#kokkuvote {
+    background-color: lightskyblue;
+    color: black;
+    padding: 7px;
+}
+#kokkuvote:hover {
+    background-color: steelblue;
+    color: white;
+}
+
+section{
+    border: 5px solid cornflowerblue;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#clearMusic {
+    background-color: crimson;
+    color: white;
+    padding: 7px;
+
+}
+#clearMusic:hover {
+    background-color: maroon;
+    color: white;
+}
+
+input[type="range"] {
+    width: 150px;
+}
+
+h2 {
+    text-align: left;
+    font-size: medium;
+}
+
+div {
+    text-align: right;
+    white-space: normal;
+    word-break: break-word;
+    color: green;
+}
+
+input[type=text] {
+    width: 200px;
+}

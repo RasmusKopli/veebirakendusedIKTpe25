@@ -101,7 +101,7 @@ function silm2(){
     }
 }
 
-function silm3(){
+function pupill1(){
     const tahvel=document.getElementById("tahvel");
     if(tahvel.getContext) {
         let t = tahvel.getContext("2d");
@@ -112,7 +112,7 @@ function silm3(){
     }
 }
 
-function silm4(){
+function pupill2(){
     const tahvel=document.getElementById("tahvel");
     if(tahvel.getContext) {
         let t = tahvel.getContext("2d");
@@ -154,8 +154,8 @@ function smile(){
     suu();
     silm1();
     silm2();
-    silm3();
-    silm4();
+    pupill1();
+    pupill2();
 }
 
 //pilt failist //drawImage()

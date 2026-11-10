@@ -148,10 +148,29 @@ function korvad(){
     }
 }
 
+function nina(){
+    const tahvel=document.getElementById("tahvel");
+
+    if(tahvel.getContext){
+        let t=tahvel.getContext("2d");
+        t.beginPath();
+        t.strokeStyle="orange";
+        t.fillStyle="gold"; //taust
+        t.lineWidth = 1;
+        t.moveTo(150,75); //alguspunkt
+        t.lineTo(150,130);
+        t.lineTo(130,130);
+        t.lineTo(150, 75); //lõpppunkt
+        t.stroke();
+        t.fill();
+    }
+}
+
 function smile(){
     korvad();
     nagu();
     suu();
+    nina();
     silm1();
     silm2();
     pupill1();

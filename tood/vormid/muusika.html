@@ -5,10 +5,62 @@
     <title>Muusika küsitlus</title>
     <script src="../js/muusikaScript.js"></script>
     <link rel="stylesheet" href="muusikaStyle.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+        // peidame vead
+        $('.viga').hide();
+
+        // puhastusnupp
+        $('#puhasta').click(function(){
+            $('#muusikaVorm')[0].reset();
+            $('.viga').hide();
+        });
+
+        // valideerimine, kui vorm on saadetud
+        $('#muusikaVorm').submit(function(event){
+            let valid = true;
+
+            // 1. Checkbox
+            if($('input[name="muusikud"]:checked').length === 0){
+                $('#viga1').show();
+                valid = false;
+            } else { $('#viga1').hide(); }
+
+            // 3. Number (0–24)
+            let tunnid = $('#muusikaPikkus').val();
+            if(tunnid === "" || isNaN(tunnid) || tunnid < 0 || tunnid > 24){
+                $('#viga3').show();
+                valid = false;
+            } else { $('#viga3').hide(); }
+
+            // 4. Radio
+            if($('input[name="valik4"]:checked').length === 0){
+                $('#viga4').show();
+                valid = false;
+            } else { $('#viga4').hide(); }
+
+            // 5. Text (ainult tähed)
+            let tekst = $('#arvamus').val().trim();
+            if(tekst === "" || !/^[a-zA-Z\s]+$/.test(tekst)){
+                $('#viga5').show();
+                valid = false;
+            } else { $('#viga5').hide(); }
+
+            // 6. Select
+            if($('#muusikaliik').val() === ""){
+                $('#viga6').show();
+                valid = false;
+            } else { $('#viga6').hide(); }
+
+        });
+    });</script>
 </head>
 <body>
 <h1>Muusika</h1>
 <section id="kusimustik">
+    <form action="" id="muusikaVorm">
     <h2 id="ul1">Milliseid muusikuid/ansambleid sa tead?</h2>
     <input type="checkbox" name="muusikud" id="Eminem" value="Eminem" onclick="ansambliValik()">
     <label for="Eminem">Eminem</label>
@@ -21,6 +73,7 @@
 
     <br>
     <div id="vastus"></div>
+        <span class="viga1" id="viga1"> Palun vali vähemalt üks muusik..</span>
     <br>
 
     <h2 id="ul2">Mida sina arvad muusika kuulamisest koolis?</h2>
@@ -28,13 +81,15 @@
     <input type="text" id="arvamus" oninput="arvamusMuusika()">
     <br>
     <div id="vastus2"></div>
+        <span class="viga5" id="viga5">Palun täida teksti kast..</span>
 
     <br>
 
     <h2 id="ul3">Mitu tundi päevas sa kuulad muusikat?</h2>
-    <input type="range" name="Kui kaua (tundides)" id="muusikaPikkus" min="1" max="10" value="0" oninput="KuiKauaTundides()">
-    <label for="muusikaPikkus">Kui kaua (1-10 tundi)</label>
+    <input type="number" name="Kui kaua (tundides)" id="muusikaPikkus" min="0" max="24" value="0" oninput="KuiKauaTundides()">
+    <label for="muusikaPikkus">Kui kaua (0-24 tundi)</label>
     <div id="vastus3"></div>
+        <span class="viga3" id="viga3">Palun täida aeg..</span>
 
     <br>
 
@@ -46,6 +101,7 @@
     <label for="eiVastus">Ei</label>
     <br>
     <div id="vastus4"></div>
+        <span class="viga4" id="viga4">Palun tee valik..</span>
 
     <br>
 
@@ -53,6 +109,7 @@
     <Input type="text" id="raadiojaamad" oninput="RaadioJaamad()">
     <label for="raadiojaamad"></label>
     <div id="vastus5"></div>
+        <span class="viga5" id="viga6">Palun täida teksti kast..</span>
 
     <br>
 
@@ -76,14 +133,17 @@
     <label for="Folk">Folk</label>
 
     <div id="vastus6"></div>
+        <span class="viga4" id="viga7">Palun vali muusika tüüp..</span>
 
     <br>
     <br>
 
-    <input type="button" id="kokkuvote" value="Kokkuvõte" onclick="muusikaKokkuvote()">
+    <input type="button" id="kokkuvote" value="Näita Andmeid" onclick="muusikaKokkuvote()">
+    <input type="submit" id="DataValidation" value="Andmete Valideerimine" onclick="muusikaKokkuvote()">
     <div id="vastus7"></div>
 
-    <input type="button" id="clearMusic" value="Clear" onClick="muusikaClear()">
+    <input type="button" value="Clear" id="puhasta" onClick="muusikaClear()">
+    </form>
 </section>
 </body>
 </html>

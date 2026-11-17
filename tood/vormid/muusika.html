@@ -36,10 +36,15 @@
             } else { $('#viga3').hide(); }
 
             // 4. Radio
-            if($('input[name="valik4"]:checked').length === 0){
+            if($('input[name="vastus4"]:checked').length === 0){
                 $('#viga4').show();
                 valid = false;
             } else { $('#viga4').hide(); }
+
+            if($('input[name="vastus6"]:checked').length === 0){
+                $('#viga7').show();
+                valid = false;
+            } else { $('#viga7').hide(); }
 
             // 5. Text (ainult tähed)
             let tekst = $('#arvamus').val().trim();
@@ -133,7 +138,7 @@
     <label for="Folk">Folk</label>
 
     <div id="vastus6"></div>
-        <span class="viga4" id="viga7">Palun vali muusika tüüp..</span>
+        <span class="viga7" id="viga7">Palun vali muusika tüüp..</span>
 
     <br>
     <br>

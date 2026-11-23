@@ -45,7 +45,7 @@ function TanaOn(){
 }
 
 function MinuSunnipaev(){
-    const whenBirthday=new Date(2026, 9, 30);
+    const whenBirthday=new Date(2027, 9, 30);
     const now=new Date;
 
     const Gap=whenBirthday.getTime()-now.getTime();

@@ -5,13 +5,29 @@
     <meta charset="UTF-8">
     <title>Rasmus veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        $(function() {
+            $('a').hover(function(event) {
+                $(this).addClass('hover');
+            },
+            function() {
+                $(this).removeClass('hover');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('ul').addClass('ul_kujundus');
+            $('ul li ul li').addClass('li_kujundus');
+        });
+    </script>
 </head>
 <body>
 <!--veebilehe sisu, mis kasutaja näeb-->
 <!--päis-->
 <header>
     <h1>
-        Rasmus veebirakenduste aluste tööd
+        Rasmus veebirakenduste aluste tööd (hõlju teksti peal)
     </h1>
 </header>
 <!--navigeerimismenüü-->
@@ -24,11 +40,18 @@
             <a href="kontakt.html">Kontakt</a>
         </li>
         <li>
-            <a href="tehtud.html">Tehtud tööd</a>
+        <a href="lingid.html">Kasulikud lingid</a>
         </li>
-        <li>
-            <a href="lingid.html">Kasulikud lingid</a>
-        </li>
+        <ul id="menyy">
+            <li>
+                <a href="tehtud.html" title="Jah, see on praegu segadus..">Tehtud tööd</a>
+                <ul>
+                    <li><a href="https://rasmuskopli.wordpress.com/">Esimese kursuse WP leht</a></li>
+                    <li><a href="kujundus2/index.html">Leht teise kujundusega</a></li>
+                    <li><a href="tood/tabelid.html">Tabelid</a></li>
+                </ul>
+            </li>
+        </ul>
     </ul>
 </nav>
 <!--sisu-->

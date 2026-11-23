@@ -1,4 +1,13 @@
 /*kommentaar*/
+ul#menyy {
+    width: 200px;
+    display: inline;
+}
+ul#menyy li ul{
+    list-style-type: none;
+    width: 200px;
+}
+
 h1{
     font-variant: small-caps;
     font-size: xx-large;
@@ -88,6 +97,8 @@ nav{
 }
 nav ul li a:hover{
     background-color: crimson;
+    font-weight: bold;
+    color: white;
 }
 
 #suurkast{

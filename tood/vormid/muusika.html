@@ -53,6 +53,12 @@
                 valid = false;
             } else { $('#viga5').hide(); }
 
+            let tekst2 = $('#arvamus').val().trim();
+            if(tekst === "" || !/^[a-zA-Z\s]+$/.test(tekst)){
+                $('#viga8').show();
+                valid = false;
+            } else { $('#viga8').hide(); }
+
             // 6. Select
             if($('#muusikaliik').val() === ""){
                 $('#viga6').show();
@@ -116,7 +122,7 @@
     <Input type="text" id="raadiojaamad" oninput="RaadioJaamad()">
     <label for="raadiojaamad"></label>
     <div id="vastus5"></div>
-        <span class="viga5" id="viga6">Palun täida teksti kast..</span>
+        <span class="viga7" id="viga7">Palun täida teksti kast..</span>
 
     <br>
 
@@ -140,7 +146,7 @@
     <label for="Folk">Folk</label>
 
     <div id="vastus6"></div>
-        <span class="viga7" id="viga7">Palun vali muusika tüüp..</span>
+        <span class="viga8" id="viga8">Palun vali muusika tüüp..</span>
 
     <br>
     <br>

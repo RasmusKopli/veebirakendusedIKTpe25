@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Rasmus veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.8.0.min.js" integrity="sha256-Qsm+tn0R947bY3ltDZv7B00PwaILR61y/Lf7Dz3Gpv4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(function() {
             $('a').hover(function(event) {
@@ -27,7 +28,7 @@
 <!--päis-->
 <header>
     <h1>
-        Rasmus veebirakenduste aluste tööd (hõlju teksti peal)
+        Rasmus veebirakenduste aluste tööd
     </h1>
 </header>
 <!--navigeerimismenüü-->
@@ -39,19 +40,21 @@
         <li>
             <a href="kontakt.html">Kontakt</a>
         </li>
-        <li>
-        <a href="lingid.html">Kasulikud lingid</a>
-        </li>
+
         <ul id="menyy">
             <li>
-                <a href="tehtud.html" title="Jah, see on praegu segadus..">Tehtud tööd</a>
+                <!--Ainult mõned, sest, kui ma panen kõik, siis läheb juba tehtud tööde kasti-->
+                <a href="tehtud.html">Tehtud tööd</a>
                 <ul>
-                    <li><a href="https://rasmuskopli.wordpress.com/">Esimese kursuse WP leht</a></li>
-                    <li><a href="kujundus2/index.html">Leht teise kujundusega</a></li>
-                    <li><a href="tood/tabelid.html">Tabelid</a></li>
+                    <li><a href="tood/maparea/map.html">Map area pildikaart</a></li>
+                    <li><a href="tood/canvas/joonistamine.html">Joonistamine</a></li>
+                    <li><a href="tood/paberiulesanne.html">Paberi Ülesanne</a></li>
                 </ul>
             </li>
         </ul>
+        <li>
+        <a href="lingid.html">Kasulikud lingid</a>
+        </li>
     </ul>
 </nav>
 <!--sisu-->
@@ -76,6 +79,8 @@
             <a href="tood/vormid/muusika.html">Muusika küsitlus</a>
             <br>
             <a href="tood/canvas/joonistamine.html">Joonistamine</a>
+            <br>
+            <a href="tood/jQuery/index.html">jQuery töö</a>
         </div>
     </section>
     <section>

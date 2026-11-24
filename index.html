@@ -6,12 +6,30 @@
     <title>Rasmus veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
     <script src="tood/js/kuupaevaFunktsioonid.js"></script>
+    <script src="https://code.jquery.com/jquery-3.8.0.min.js" integrity="sha256-Qsm+tn0R947bY3ltDZv7B00PwaILR61y/Lf7Dz3Gpv4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.vihjemull').mouseover(function(e) {
+                var mull = $(this).attr('title');
+                $(this).attr('title','');
+                $(this).append('<div id="vihje">' + mull + '</div>');
+                $('#vihje').fadeIn('500');
+                $('#vihje').fadeTo('10',0.9);
+            }).mousemove(function(e) {
+                $('#vihje').css('top', e.pageY + 10 );
+                $('#vihje').css('left', e.pageX + 20 );
+            }).mouseout(function() {
+                $(this).attr('title',$('#vihje').html());
+                $(this).children('div#vihje').remove();
+            });
+        });
+    </script>
 </head>
 <body>
 <!--veebilehe sisu, mis kasutaja näeb-->
 <!--päis-->
 <header>
-    <h1>
+    <h1 title="Pealkiri sellele veebilehele" class="vihjemull">
         Rasmus veebirakenduste aluste tööd
     </h1>
 </header>
@@ -25,7 +43,7 @@
             <a href="kontakt.html">Kontakt</a>
         </li>
         <li>
-            <a href="tehtud.html">Tehtud tööd</a>
+            <a href="tehtud.html" title="Ilma jäljeribaga" class="vihjemull">Tehtud tööd</a>
         </li>
         <li>
             <a href="lingid.html">Kasulikud lingid</a>
@@ -37,7 +55,7 @@
 </nav>
 <!--sisu-->
 <main>
-    <section id="osa1">
+    <section id="osa1" title="Lühike tutvustus" class="vihjemull">
         <h2>Tere tulemast!</h2>
         <p>See on veebirakenduste tunnis
             käsitsi kirjutatud leht</p>
@@ -48,23 +66,23 @@
 
     <section id="osa2">
         <h2>Päevapilt</h2>
-        <div>Ise tehtud pilt
+        <div title="Mitte kõige parim pilt" class="vihjemull">Ise tehtud pilt
             <img src="hommik.png" alt="see on päikesetõus" id="erapilt">
         </div>
     </section>
 
     <section id="osa3">
         <input type="button" value="Täna on" onclick="TanaOn()">
-        <div id="vastus"></div>
+        <div id="vastus" title="Näitab kuupäeva ja aega" class="vihjemull"></div>
         <br>
         <input type="button" value="Sünnipäev" onclick="MinuSunnipaev()">
-        <div id="vastus2"></div>
+        <div id="vastus2" title="Oktoober 30" class="vihjemull"></div>
     </section>
 
 </main>
 <!--jalus-->
 <footer>
-    <div>
+    <div title="Nimi" class="vihjemull">
         Rasmus Kopli
     </div>
 </footer>

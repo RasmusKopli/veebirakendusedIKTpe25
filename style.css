@@ -107,6 +107,16 @@ nav ul li a:hover{
     gap: 10px;
 }
 
-
+/* vihjemull */
+#vihje {
+    position:absolute;
+    z-index:9999;
+    color:#fff;
+    font-size:14px;
+    background-color: maroon;
+    padding: 5px 25px;
+    border-radius: 10px;
+    font-weight: normal;
+}
 
 
